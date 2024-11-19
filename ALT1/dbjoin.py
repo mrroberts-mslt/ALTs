@@ -9,6 +9,8 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
+#the \ allow you to split up the sql query to make it more readable
+
 sql = "SELECT \
   patients.fName AS pfname, \
   doctors.docFirstName AS docfname \
