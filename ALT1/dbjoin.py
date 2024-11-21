@@ -1,13 +1,13 @@
 import mysql.connector
 
-mydb = mysql.connector.connect(
+db = mysql.connector.connect(
   host="localhost",
   user="yourusername",
   password="yourpassword",
   database="mydatabase"
 )
 
-mycursor = mydb.cursor()
+cursor = db.cursor()
 
 #the \ allow you to split up the sql query to make it more readable
 
@@ -17,9 +17,9 @@ sql = "SELECT \
   FROM patients \
   INNER JOIN doctors ON patients.doctor_id = doctors.id"
 
-mycursor.execute(sql)
+cursor.execute(sql)
 
-myresult = mycursor.fetchall()
+myresult = cursor.fetchall()
 
 for x in myresult:
   print(x)
