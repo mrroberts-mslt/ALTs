@@ -8,9 +8,9 @@ db = mysql.connector.connect(
 )
 
 
-mycursor = db.cursor()
+cursor = db.cursor()
 
-mycursor.execute("SHOW DATABASES")
+cursor.execute("SHOW DATABASES")
 
-for x in mycursor:
-  print(x)
+for i in cursor:
+  print(i)
