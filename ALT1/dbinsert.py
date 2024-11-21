@@ -7,13 +7,13 @@ db = mysql.connector.connect(
   database="mydatabase"
 )
 
-mycursor = db.cursor()
+cursor = db.cursor()
 sql = "INSERT INTO doctors (docFirstName, docLastName) VALUES (%s, %s)"
 val = ("Emily", "Clark")
 
-mycursor.execute(sql, val)
+cursor.execute(sql, val)
 
 db.commit()
 
-print(mycursor.rowcount, "record inserted.")
+print(cursor.rowcount, "record inserted.")
 
