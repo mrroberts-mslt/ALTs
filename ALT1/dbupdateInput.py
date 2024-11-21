@@ -8,11 +8,11 @@ db = mysql.connector.connect(
 )
 
 
-mycursor = db.cursor()
+cursor = db.cursor()
 
-mycursor.execute("SELECT * FROM patients")
+cursor.execute("SELECT * FROM patients")
 
-myresult = mycursor.fetchall()
+myresult = cursor.fetchall()
 
 for x in myresult:
   print(x)
@@ -23,8 +23,8 @@ newLname = input("Enter a new last name: ")
 sql = "UPDATE patients SET lName = %s WHERE patient_id = %s"
 val = (newLname, idChange)
 
-mycursor.execute(sql, val)
+cursor.execute(sql, val)
 
 db.commit()
 
-print(mycursor.rowcount, "record(s) affected")
+print(cursor.rowcount, "record(s) affected")
