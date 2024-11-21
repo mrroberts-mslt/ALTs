@@ -7,13 +7,13 @@ db = mysql.connector.connect(
   database="mydatabase"
 )
 
-mycursor = db.cursor()
+cursor = db.cursor()
 
 sql = "UPDATE patients SET lname = %s WHERE lname = %s"
 val = ("McCarthy", "McLennon")
 
-mycursor.execute(sql, val)
+cursor.execute(sql, val)
 
-mydb.commit()
+db.commit()
 
-print(mycursor.rowcount, "record(s) affected")
+print(cursor.rowcount, "record(s) affected")
