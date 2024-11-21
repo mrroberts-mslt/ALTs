@@ -7,11 +7,11 @@ db = mysql.connector.connect(
   database="mydatabase"
 )
 
-mycursor = db.cursor()
+cursor = db.cursor()
 
-mycursor.execute("SELECT * FROM doctors")
+cursor.execute("SELECT * FROM doctors")
 
-myresult = mycursor.fetchall()
+myresult = cursor.fetchall()
 
 for x in myresult:
   print(x)
